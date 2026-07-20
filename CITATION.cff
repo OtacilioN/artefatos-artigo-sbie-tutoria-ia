@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use these artifacts, please cite the accompanying article."
+title: "StudyChat downstream interaction-profile analysis artifacts"
+type: software
+authors:
+  - family-names: "Maia Neto"
+    given-names: "Otacilio Saraiva"
+  - family-names: "Leite de Mello"
+    given-names: "Rafael Ferreira"
+  - family-names: "Falcão"
+    given-names: "Taciana Pontual"
+  - family-names: "Alves do Nascimento"
+    given-names: "André Câmara"
+repository-code: "https://github.com/OtacilioN/studychat-downstream-analysis"
+license: MIT
+version: 1.0.0
+date-released: 2026-07-20
+

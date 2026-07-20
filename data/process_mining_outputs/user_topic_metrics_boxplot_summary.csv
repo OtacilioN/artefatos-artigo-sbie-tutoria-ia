@@ -1,0 +1,7 @@
+cluster,profile,units,turns_median,turns_q1,turns_q3,entropy_median,entropy_q1,entropy_q3,branching_median,branching_q1,branching_q3,mean_trace_length_median,mean_trace_length_q1,mean_trace_length_q3
+0,Exploratorio / investigativo A,191,17.0,9.0,30.0,0.528,0.342,0.716,1.75,1.5,2.0,10.0,6.0,19.0
+1,Localmente sistematico,117,2.0,2.0,3.0,0.0,0.0,0.0,0.667,0.5,1.0,2.0,2.0,2.0
+2,Linear / diretivo,43,5.0,3.0,7.0,0.0,0.0,0.0,1.0,1.0,1.0,4.0,3.0,5.25
+3,Estrategia mista,197,13.0,7.0,21.0,0.526,0.361,0.786,1.625,1.333,2.0,7.4,5.0,13.0
+4,Exploratorio / investigativo B,184,19.0,9.0,33.0,0.67,0.459,0.956,1.817,1.5,2.344,9.0,5.306,16.812
+5,Semi-exploratorio,184,17.0,7.0,28.25,0.5,0.333,0.719,1.667,1.333,2.0,8.5,5.0,15.25

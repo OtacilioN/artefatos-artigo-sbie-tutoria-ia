@@ -1,0 +1,69 @@
+{
+  "order1": {
+    "ari_vs_reference": 1.0,
+    "cluster_sizes": {
+      "0": 151,
+      "1": 60,
+      "2": 134,
+      "3": 81,
+      "4": 136,
+      "5": 149,
+      "6": 74,
+      "7": 19,
+      "8": 82,
+      "9": 30
+    },
+    "k": 10,
+    "nmi_vs_reference": 1.0,
+    "silhouette": 0.42985427379608154
+  },
+  "order2": {
+    "ari_vs_reference": 1.0,
+    "cluster_sizes": {
+      "0": 191,
+      "1": 117,
+      "2": 43,
+      "3": 197,
+      "4": 184,
+      "5": 184
+    },
+    "k": 6,
+    "nmi_vs_reference": 1.0,
+    "silhouette": 0.46370798349380493
+  },
+  "process_metrics_match_reference": true,
+  "seed": 42,
+  "structural_invariants": {
+    "events": 16364,
+    "first_transitions": 14637,
+    "second_transitions": 12910,
+    "states": 29,
+    "superstates": 276,
+    "traces": 1727,
+    "units": 916,
+    "users": 201,
+    "zero_second_order_units": 90
+  },
+  "trajectory": {
+    "ari_vs_reference": 1.0,
+    "cluster_sizes": {
+      "0": 10,
+      "1": 15,
+      "2": 53,
+      "3": 37,
+      "4": 44,
+      "5": 20,
+      "6": 12,
+      "7": 10
+    },
+    "k": 8,
+    "nmi_vs_reference": 1.0,
+    "silhouette": 0.2120734827994361
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.1",
+    "scikit_learn": "1.7.1",
+    "umap": "0.5.9.post2"
+  }
+}

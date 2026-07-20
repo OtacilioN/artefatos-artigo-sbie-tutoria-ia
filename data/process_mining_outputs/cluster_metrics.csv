@@ -1,0 +1,7 @@
+cluster,events,traces,unique_acts,avg_branching,avg_entropy,mean_trace_length,suggested_label
+0,4005,340,24,6.375,1.585,11.779,"Exploratório + ['explicativo', 'perg. explo.', 'diretivo']"
+1,339,147,19,3.526,1.527,2.306,"Focado com variação local + ['explicativo', 'perg. explo.']"
+2,261,57,12,1.417,0.136,4.579,Linear/diretivo + ['explicativo']
+3,3492,382,24,6.25,1.517,9.141,"Misto/intermediário + ['explicativo', 'perg. explo.', 'perg. fato']"
+4,4369,417,26,6.462,1.535,10.477,"Exploratório + ['explicativo', 'perg. explo.', 'perg. fato']"
+5,3898,384,26,5.615,1.393,10.151,"Ramificado com caminho preferencial + ['explicativo', 'perg. explo.', 'diretivo']"
