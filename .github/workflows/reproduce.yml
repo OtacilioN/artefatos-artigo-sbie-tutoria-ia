@@ -21,3 +21,17 @@ jobs:
         run: python scripts/reproduce_analysis.py
       - name: Regenerate figures
         run: python scripts/regenerate_figures.py
+
+  classifier-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate classifier source
+        run: |
+          python -m py_compile classifier/*.py
+          sh -n classifier/run_full_classifier.sh
+          sh -n classifier/setup_macos.sh
+          PYTHONPATH=classifier python -m unittest classifier/tests/test_contract_light.py -v

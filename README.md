@@ -1,7 +1,7 @@
 # StudyChat downstream interaction-profile analysis
 
-Reproducibility artifacts for the downstream analysis of dialogue-act sequences
-used in the article *Padrões de Interação em Tutoria por IA: Perfis
+Reproducibility artifacts for the dialogue-act classifier and downstream
+analysis used in the article *Padrões de Interação em Tutoria por IA: Perfis
 Conversacionais Compatíveis com Aprendizagem Autorregulada*.
 
 The repository starts from fixed, pseudonymized dialogue-act sequences and
@@ -15,8 +15,13 @@ reproduces the analytical stages reported in the article:
 
 ## Scope
 
-This release contains only the downstream analysis. It does not distribute raw
-StudyChat messages or tutor responses. The fixed analytical input contains:
+This release contains the complete downstream package and a portable,
+checkpointed implementation of the supervised SwDA classifier. It does not
+distribute raw StudyChat messages, tutor responses, Switchboard transcripts,
+classified prompts or model checkpoints. Those inputs are acquired locally as
+documented in [`classifier/README.md`](classifier/README.md).
+
+The fixed downstream analytical input contains:
 
 | Item | Count |
 |---|---:|
@@ -39,10 +44,25 @@ scripts/
   reproduce_analysis.py     rebuilds and validates clusters, metrics and trajectories
   regenerate_figures.py     rebuilds the article figures
 results/reference/          machine-readable reference summary
+classifier/                 supervised SwDA training and StudyChat inference
 ```
 
 Column-level definitions are available in [DATA_DICTIONARY.md](DATA_DICTIONARY.md).
 `MANIFEST.sha256` records the checksum of every derived input artifact.
+
+## Run the supervised classifier
+
+The classifier has its own Python 3.11 environment because its pinned deep
+learning dependencies differ from the downstream numerical environment. On an
+Apple Silicon Mac, start with:
+
+```bash
+cd classifier
+./setup_macos.sh
+```
+
+Then follow [`classifier/README.md`](classifier/README.md) to accept StudyChat
+access, prepare the local SwDA inputs and launch the resumable full run.
 
 ## Reproduce
 
@@ -98,9 +118,11 @@ repository.
 - process mining: PM4Py 2.7.18 Heuristic Miner with that version's parameters
   made explicit in the figure script.
 
-Exact dependency versions are pinned in `requirements.txt`. GitHub Actions runs
-the portable validation and regenerates Figures 2--4 on every push; the exact
-UMAP check is available explicitly for the validated environment.
+Exact downstream dependency versions are pinned in `requirements.txt`, while
+classifier versions are pinned separately in `classifier/requirements.txt`.
+GitHub Actions runs the portable downstream validation, regenerates Figures
+2--4 and checks the classifier source contract on every push; the exact UMAP
+check is available explicitly for the validated environment.
 
 ## Data and citation
 

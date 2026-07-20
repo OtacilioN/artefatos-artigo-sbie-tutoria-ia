@@ -15,3 +15,18 @@ The MIT license in this repository applies to the code written for this
 analysis. Reuse of derived data must also respect the terms and ethical
 requirements of the original StudyChat release.
 
+## Classifier inputs and outputs
+
+The classifier code is distributed, but its raw inputs and prompt-bearing
+outputs are not. In particular, Git excludes:
+
+- the gated StudyChat messages and tutor responses;
+- SwDA/Switchboard transcripts used for supervised training;
+- classified CSV, JSON and JSONL files that retain StudyChat prompts;
+- BERT checkpoints, optimizer state and final model weights.
+
+StudyChat must be obtained by accepting the conditions of the official
+CC BY 4.0 release at <https://huggingface.co/datasets/wmcnicho/StudyChat>.
+Switchboard is catalogued as LDC97S62 and is subject to its source terms:
+<https://catalog.ldc.upenn.edu/LDC97S62>. The repository records expected
+checksums for the local SwDA split without redistributing its utterance text.
