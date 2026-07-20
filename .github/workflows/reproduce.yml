@@ -20,5 +20,4 @@ jobs:
       - name: Validate analysis
         run: python scripts/reproduce_analysis.py
       - name: Regenerate figures
-        run: python scripts/regenerate_figures.py --with-umap
-
+        run: python scripts/regenerate_figures.py

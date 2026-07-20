@@ -1,4 +1,5 @@
 {
+  "exact_umap_required": true,
   "order1": {
     "ari_vs_reference": 1.0,
     "cluster_sizes": {

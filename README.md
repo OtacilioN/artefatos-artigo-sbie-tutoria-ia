@@ -54,7 +54,7 @@ python3.11 -m venv .venv
 .venv/bin/python -m pip install --upgrade pip
 .venv/bin/python -m pip install -r requirements.txt
 
-.venv/bin/python scripts/reproduce_analysis.py
+.venv/bin/python scripts/reproduce_analysis.py --require-exact-umap
 .venv/bin/python scripts/regenerate_figures.py --with-umap
 
 # Optional integrity check (macOS)
@@ -66,8 +66,8 @@ figures are written to `figures/reproduced/`.
 
 ## Expected validation
 
-The scripts fail explicitly if a structural or numerical invariant changes. A
-successful run recovers:
+The scripts fail explicitly if a structural or numerical invariant changes. In
+the validated macOS arm64 environment, exact UMAP validation recovers:
 
 | Analysis | k | Silhouette | ARI/NMI against stored partition |
 |---|---:|---:|---:|
@@ -78,6 +78,14 @@ successful run recovers:
 It also validates the 916 student-assignment structural-metric rows, the six
 cluster summaries, 42 longitudinal nodes, 168 links, and 614 transitions
 between consecutive assignments.
+
+UMAP uses approximate nearest-neighbor kernels whose floating-point execution
+can vary by CPU architecture even with fixed versions and seed. On a different
+platform, omit `--require-exact-umap` and `--with-umap`: the script still
+rebuilds both embeddings, reports ARI/NMI against the stored partitions, and
+strictly validates all deterministic Markov, process-metric, and trajectory
+invariants. The reference UMAP partition and figure remain preserved in the
+repository.
 
 ## Reproducibility choices
 
@@ -91,7 +99,8 @@ between consecutive assignments.
   made explicit in the figure script.
 
 Exact dependency versions are pinned in `requirements.txt`. GitHub Actions runs
-the complete validation and figure-regeneration workflow on every push.
+the portable validation and regenerates Figures 2--4 on every push; the exact
+UMAP check is available explicitly for the validated environment.
 
 ## Data and citation
 
