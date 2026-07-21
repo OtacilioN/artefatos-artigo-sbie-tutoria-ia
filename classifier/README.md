@@ -138,3 +138,18 @@ The main outputs are:
 - `trainer_log_history.json`: training and validation history.
 
 All outputs remain local because they contain raw prompts or large model files.
+
+## Validate a completed run
+
+After `execution_state.json` reports `completed`, run the packaged validator:
+
+```bash
+.venv/bin/python validate_outputs.py --output-dir outputs/full
+```
+
+It checks the three classified formats against each other, requires exactly
+16,851 source rows, validates all SwDA codes, names and probabilities, confirms
+the 41-output model configuration, reconciles label counts and SHA-256 hashes
+with the experiment manifest, and verifies the validation metrics. A sanitized
+summary is written to `outputs/full/validation_report.json` and printed to the
+terminal.
